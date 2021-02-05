@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
+</Project>
+
+((// soyut nesneler ainterfaceler ve abstract nesnelre r base classları aaAbstract clasa koyarız
+&&// concreetete somut nesneler  referans tutucuları koyacağız ne işe yarıyor abstract uygulamalar arasındaki bağımlılılkları minimize edeceğiz
