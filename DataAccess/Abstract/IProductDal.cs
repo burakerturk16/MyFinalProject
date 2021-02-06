@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAcces;
+using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +9,8 @@ namespace DataAccess.Abstract
 {
    public interface IProductDal:IEntityRepository<Product>
     {
-         
+        List<ProductDetailDto> GetProductDetails();
     }
 }
 //interfacenin methodları default olarak publictir
+//kodu iyileştirdik
