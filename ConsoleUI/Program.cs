@@ -13,7 +13,7 @@ namespace ConsoleUI
         {
             ProductTest();
             //CategoryTest();
-
+             
         }
 
         private static void CategoryTest()
@@ -27,13 +27,22 @@ namespace ConsoleUI
 
         private static void ProductTest()
         {
-            EFProductDal eFProductDal = new EFProductDal();
-            PrdouctManager productManager = new PrdouctManager(eFProductDal);
-           
-            foreach (var product in productManager.GetProductDetails())
+
+            PrdouctManager productManager = new PrdouctManager(new EFProductDal());
+            var result = productManager.GetProductDetails();
+            if(result.Success==true)
             {
-                Console.WriteLine("ProductName: " + product.ProductName + " - CategoryName: " + product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine("ProductName: " + product.ProductName + " - CategoryName: " + product.CategoryName);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+           
+            
         }
     }
 }
